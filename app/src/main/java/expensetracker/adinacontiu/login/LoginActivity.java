@@ -1,4 +1,4 @@
-package expensetracker.adinacontiu.expensestracker;
+package expensetracker.adinacontiu.login;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -28,6 +28,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import expensetracker.adinacontiu.expensestracker.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +50,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * TODO: remove after connecting to a real authentication system.
      */
     private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "foo@example.com:hello", "bar@example.com:world"
+            "foo@example.com", "12345"
     };
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
