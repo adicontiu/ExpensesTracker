@@ -97,14 +97,8 @@ public class MakePhotoActivity extends Activity {
             cameraDevice = null;
         }
     };
-    final CameraCaptureSession.CaptureCallback captureCallbackListener = new CameraCaptureSession.CaptureCallback() {
-        @Override
-        public void onCaptureCompleted(CameraCaptureSession session, CaptureRequest request, TotalCaptureResult result) {
-            super.onCaptureCompleted(session, request, result);
-            Toast.makeText(MakePhotoActivity.this, "Saved:" + file, Toast.LENGTH_SHORT).show();
-            createCameraPreview();
-        }
-    };
+
+    final CameraCaptureSession.CaptureCallback captureCallbackListener = new CameraCaptureCallback(this, file);
 
     protected void startBackgroundThread() {
         mBackgroundThread = new HandlerThread("Camera Background");
