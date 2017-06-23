@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context="expensetracker.adinacontiu.FirstPage">
+        tools:context="expensetracker.adinacontiu.SecondPage">
 
     <android.support.design.widget.AppBarLayout
             android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_first_page2"/>
+    <include layout="@layout/content_second_page"/>
 
     <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"

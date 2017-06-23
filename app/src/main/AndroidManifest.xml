@@ -4,35 +4,48 @@
 
     <uses-sdk
             android:minSdkVersion="16"
-            android:targetSdkVersion="23" />
+            android:targetSdkVersion="23"/>
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-feature android:name="android.hardware.camera2.full" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
-    <!--The <application> section allows to define metadata for your application and optionally define an explicit application-->
+    <uses-feature android:name="android.hardware.camera2.full"/>
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <!-- The <application> section allows to define metadata for your application and optionally define an explicit application -->
     <application
+            android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
-            android:allowBackup="true"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <!--The <activity> tag defines an activity. The name attribute points to class, which (if not fully qualified) is relative to the package defined in the`package` attribute.-->
+
+        <!-- The <activity> tag defines an activity. The name attribute points to class, which (if not fully qualified) is relative to the package defined in the`package` attribute. -->
         <activity
-                android:name="expensetracker.adinacontiu.camera.MakePhotoActivity"
-                android:label="@string/app_name" >
-            <!--The intent filter part tells the Android runtime that this activity should be registered as a possible entry point into the application and made available in the launcher of the Android system.-->
+                android:name="expensetracker.adinacontiu.FirstPage"
+                android:label="@string/app_name"
+                android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- The intent filter part tells the Android runtime that this activity should be registered as a possible entry point into the application and made available in the launcher of the Android system. -->
             <intent-filter>
-                <!--The action defines that it ( android:name="android.intent.action.MAIN" ` ) can be started.-->
-                <action android:name="android.intent.action.MAIN" />
-                <!--The `category android:name="android.intent.category.LAUNCHER" parameter tells the Android system to add the activity to the launcher.-->
-                <category android:name="android.intent.category.LAUNCHER" />
+
+                <!-- The action defines that it ( android:name="android.intent.action.MAIN" ` ) can be started. -->
+                <action android:name="android.intent.action.MAIN"/>
+                <!-- The `category android:name="android.intent.category.LAUNCHER" parameter tells the Android system to add the activity to the launcher. -->
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-        <!--Similar to the <activity> tag, you can use the service, receiver and provider to declare other Android components.-->
+        <!-- Similar to the <activity> tag, you can use the service, receiver and provider to declare other Android components. -->
 
-
+        <activity
+                android:name="expensetracker.adinacontiu.SecondPage"
+                android:label="@string/title_activity_second_page"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
+
 </manifest>
