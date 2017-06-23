@@ -14,4 +14,8 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_first_page">FirstPage</string>
     <string name="take_picture">Take picture</string>
+    <string name="picture">Picture</string>
+    <string name="description_info">Info</string>
+    <string name="request_permission">This sample needs camera permission.</string>
+    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
 </resources>
