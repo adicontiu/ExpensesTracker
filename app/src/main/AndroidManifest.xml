@@ -2,68 +2,49 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="expensetracker.adinacontiu.expensestracker">
 
+    <uses-sdk
+            android:minSdkVersion="16"
+            android:targetSdkVersion="23" />
+
     <!-- To auto-complete the email text field in the login form with the user's emails -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-    <uses-permission android:name="android.permission.READ_PROFILE"/>
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-feature android:name="android.hardware.camera2.full" />
 
     <application
+            android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name" >
-        <activity
-                android:name="expensetracker.adinacontiu.camera.MakePhotoActivity"
-                android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+        <activity android:name="expensetracker.adinacontiu.camera.MakePhotoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
+    <!---->
+    <!--&lt;!&ndash;The <application> section allows to define metadata for your application and optionally define an explicit application&ndash;&gt;-->
     <!--<application-->
-            <!--android:allowBackup="true"-->
             <!--android:icon="@mipmap/ic_launcher"-->
             <!--android:label="@string/app_name"-->
-            <!--android:supportsRtl="true"-->
             <!--android:theme="@style/AppTheme">-->
-
-        <!-- <activity -->
-        <!-- android:name="expensetracker.adinacontiu.login.LoginActivity" -->
-        <!-- android:label="@string/app_name"> -->
-        <!-- <intent-filter> -->
-        <!-- <action android:name="android.intent.action.MAIN"/> -->
-
-
-        <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
-        <!-- </intent-filter> -->
-        <!-- </activity> -->
-        <!-- <activity -->
-        <!-- android:name="expensetracker.adinacontiu.login.MainActivity" -->
-        <!-- android:label="@string/title_activity_main" -->
-        <!-- android:theme="@style/AppTheme.NoActionBar"> -->
-        <!-- </activity> -->
-        <!-- <activity -->
-        <!-- android:name="expensetracker.adinacontiu.login.MainActivity" -->
-        <!-- android:label="@string/title_activity_main" -->
-        <!-- android:theme="@style/AppTheme.NoActionBar"> -->
-        <!-- </activity> -->
+        <!--&lt;!&ndash;The <activity> tag defines an activity. The name attribute points to class, which (if not fully qualified) is relative to the package defined in the`package` attribute.&ndash;&gt;-->
         <!--<activity-->
-                <!--android:name="expensetracker.adinacontiu.login.FirstPage"-->
-                <!--android:label="@string/title_activity_first_page"-->
-                <!--android:theme="@style/AppTheme.NoActionBar">-->
+                <!--android:name="expensetracker.adinacontiu.camera.MakePhotoActivity"-->
+                <!--android:label="@string/app_name" >-->
+            <!--&lt;!&ndash;The intent filter part tells the Android runtime that this activity should be registered as a possible entry point into the application and made available in the launcher of the Android system.&ndash;&gt;-->
             <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN"/>-->
-
-                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+                <!--&lt;!&ndash;The action defines that it ( android:name="android.intent.action.MAIN" ` ) can be started.&ndash;&gt;-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--&lt;!&ndash;The `category android:name="android.intent.category.LAUNCHER" parameter tells the Android system to add the activity to the launcher.&ndash;&gt;-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
             <!--</intent-filter>-->
         <!--</activity>-->
-        <!--<activity android:name="expensetracker.adinacontiu.camera.ImagePickActivity">-->
-        <!--</activity>-->
-        <!--<activity android:name="expensetracker.adinacontiu.camera.MakePhotoActivity">-->
-        <!--</activity>-->
-    <!--</application>-->
 
+        <!--&lt;!&ndash;Similar to the <activity> tag, you can use the service, receiver and provider to declare other Android components.&ndash;&gt;-->
+
+
+    <!--</application>-->
 </manifest>
