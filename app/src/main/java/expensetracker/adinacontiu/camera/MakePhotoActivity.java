@@ -3,6 +3,7 @@ package expensetracker.adinacontiu.camera;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.ImageFormat;
 import android.graphics.SurfaceTexture;
@@ -23,7 +24,9 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
+import expensetracker.adinacontiu.FirstPage;
 import expensetracker.adinacontiu.expensestracker.R;
 
 import java.io.*;
@@ -31,6 +34,8 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class MakePhotoActivity extends Activity {
     private static final String TAG = "AndroidCameraApi";
@@ -185,6 +190,11 @@ public class MakePhotoActivity extends Activity {
                 public void onCaptureCompleted(CameraCaptureSession session, CaptureRequest request, TotalCaptureResult result) {
                     super.onCaptureCompleted(session, request, result);
                     Toast.makeText(MakePhotoActivity.this, "Saved:" + file, Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MakePhotoActivity.this, FirstPage.class);
+                    intent.putExtra(EXTRA_MESSAGE, "Sending from main activity");
+                    System.out.println("before starting new activity");
+                    startActivity(intent);
+                    System.out.println("after starting new activity");
                     createCameraPreview();
                 }
             };
@@ -307,7 +317,7 @@ public class MakePhotoActivity extends Activity {
     @Override
     protected void onPause() {
         Log.e(TAG, "onPause");
-        //closeCamera();
+        closeCamera();
         stopBackgroundThread();
         super.onPause();
     }
